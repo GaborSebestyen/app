@@ -1,6 +1,2 @@
-FROM node:12-alpine
-RUN apk add --no-cache python3 g++ make
-WORKDIR /app
-COPY . .
-RUN yarn install --production
-CMD ["node", "src/index.js"]
+FROM nginx:1.19
+COPY . /usr/share/nginx/html
